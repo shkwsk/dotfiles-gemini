@@ -1,0 +1,14 @@
+[user]
+	name = kawasaki@cl.ics.tut.ac.jp
+[core]
+	editor = emacs
+[color]
+	ui = auto
+[alias]
+	lg = log --graph --abbrev-commit --date=relative --branches --pretty=format:'%C(yellow)%h%Creset -%C(bold blue)%d%Creset %s %C(red)(%cr)%Creset'
+#	lg = log --graph --abbrev-commit --pretty=oneline --branches --date=short 
+	st = status
+	cm = commit
+	co = checkout
+	br = branch
+	ad = add
