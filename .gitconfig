@@ -2,6 +2,7 @@
 	name = kawasaki@cl.ics.tut.ac.jp
 [core]
 	editor = emacs
+	excludesfile = /home/kawasaki/.gitignore_global
 [color]
 	ui = auto
 [alias]
