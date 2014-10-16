@@ -1,7 +1,4 @@
 export PATH=$HOME/local/bin:$PATH
-export CLICOLOR=1
-export LSCOLORS=DxGxcxdxCxegedabagacad
-eval "`dircolors -b ~/.dir_colors`"
 source ~/.bashrc
 
 # ohno-STD setting
