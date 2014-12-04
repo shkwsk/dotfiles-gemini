@@ -1,8 +1,11 @@
 lib/
+old*/
 *~
 .*~
 \#*
 .\#*
 .DS_Store
 *.pyc
+*.jar
 *.o
+__*__.py
