@@ -28,9 +28,7 @@ SAVEHIST=1000000
 # プロンプト
 # 1行表示
 # PROMPT="%~ %# "
-# 2行表示
 PROMPT="%{${fg[red]}%}[%n@%m]%{${reset_color}%} %~ %# "
- 
  
 # 単語の区切り文字を指定する
 autoload -Uz select-word-style
@@ -54,12 +52,12 @@ zstyle ':completion:*' ignore-parents parent pwd ..
  
 # sudo の後ろでコマンド名を補完する
 zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
-                   /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin
+       /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin
  
 # ps コマンドのプロセス名補完
 zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
- 
- 
+
+
 ########################################
 # vcs_info
 autoload -Uz vcs_info
@@ -129,6 +127,7 @@ alias cp='cp -i'
 alias mv='mv -i'
  
 alias mkdir='mkdir -p'
+alias emacs='/usr/local/bin/emacs-24.4'
  
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
@@ -153,7 +152,7 @@ fi
  
  
 ########################################
-# OS 別の設定
+# OS 別のls設定
 case ${OSTYPE} in
     darwin*)
         #Mac用の設定

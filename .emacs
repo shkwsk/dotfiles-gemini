@@ -9,7 +9,10 @@
 (setq install-elisp-repository-directory "~/.emacs.d/elisp/")
 
 ;; ツールバーを非表示
-(tool-bar-mode nil)
+;(tool-bar-mode nil)
+(if window-system
+    (tool-bar-mode 0))
+
 ;; メニューバーを非表示
 (menu-bar-mode nil)
 
@@ -25,7 +28,7 @@
 (global-linum-mode t)
 
 ;;; 起動時の画面はいらない
-(setq inhibit-startup-message t)
+;(setq inhibit-startup-message t)
 
 ;;ウインドウサイズ最大化
 (set-frame-parameter nil 'fullscreen 'maximized)
@@ -43,20 +46,30 @@
 
 ;;; キーバインド
 (define-key global-map (kbd "C-\\") nil)                  ; C-\の日本語入力の設定を無効にする
-(define-key global-map (kbd "C-h") 'delete-backward-char) ; 削除
 (define-key global-map (kbd "M-?") 'help-for-help)        ; ヘルプ
-(define-key global-map (kbd "C-z") 'undo-tree-undo)       ; undo
 (define-key global-map (kbd "C-/") 'undo-tree-undo)       ; undo
 (define-key global-map (kbd "C-\\") 'undo-tree-redo)      ; redo
-(define-key global-map (kbd "C-c i") 'indent-region)      ; インデント
-(define-key global-map (kbd "C-c C-i") 'dabbrev-expand)   ; 補完
-(define-key global-map (kbd "C-o") 'toggle-input-method)  ; 日本語入力切替
-(define-key global-map (kbd "C-c") 'other-frame)          ; フレーム移動
+;(define-key global-map (kbd "C-c C-i") 'dabbrev-expand)   ; 補完
+;(define-key global-map (kbd "C-c C-c") 'comment-region)   ; 選択してコメントアウト
+;(define-key global-map (kbd "C-h") 'delete-backward-char) ; 削除
+;(define-key global-map (kbd "C-c i") 'indent-region)      ; インデント
+;(define-key global-map (kbd "C-o") 'toggle-input-method)  ; 日本語入力切替
+;(define-key global-map (kbd "C-c") 'other-frame)          ; フレーム移動
+(global-unset-key "\C-z")       ; do nothing.
+
+;;; 端末上のemacsでマウススクロールを有効
+(unless window-system  (xterm-mouse-mode 1)
+	(global-set-key [mouse-4] '(lambda ()
+				     (interactive)
+				     (scroll-down 1)))
+	(global-set-key [mouse-5] '(lambda ()
+				     (interactive)
+				     (scroll-up 1))))
 
 ;;; 対応する括弧を光らせる。
 (show-paren-mode t)
 
-;;; 行の先頭でC-kを一回押すだけで行全体を消去する
+;;; C-kで改行を含めた行を消去する
 (setq kill-whole-line t)
 
 ;;; バッファの最後でnewlineで新規行を追加するのを禁止する
