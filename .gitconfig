@@ -1,5 +1,5 @@
 [user]
-	name = kawasaki@cl.ics.tut.ac.jp
+	name = shkwsk
 [core]
 	editor = emacs
 	excludesfile = ~/.gitignore_global
