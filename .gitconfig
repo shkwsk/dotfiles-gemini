@@ -3,11 +3,11 @@
 [core]
 	editor = emacs
 	excludesfile = ~/.gitignore_global
+	pager = 
 [color]
 	ui = auto
 [alias]
-	lg = log --graph --abbrev-commit --date=relative --branches --pretty=format:'%C(yellow)%h%Creset -%C(bold blue)%d%Creset %s %C(red)(%cr)%Creset'
-#	lg = log --graph --abbrev-commit --pretty=oneline --branches --date=short 
+	lg = log --graph --abbrev-commit --date=local --branches --pretty=format:'%C(yellow)%h%Creset -%C(bold blue)%d%Creset %C(red)(%cd)%Creset \n%s\n'
 	st = status
 	cm = commit
 	co = checkout
