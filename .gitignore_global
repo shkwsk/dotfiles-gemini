@@ -5,6 +5,7 @@ old*/
 \#*
 .\#*
 .DS_Store
+._.DS_Store
 *.pyc
 *.jar
 *.o
