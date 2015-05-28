@@ -49,8 +49,10 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/usr/local/Cellar/coreutils/8.23_1/libexec/gnubin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/texbin"
+export PATH="/usr/local/Cellar/coreutils/8.23_1/libexec/gnubin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/texbin"
 # export MANPATH="/usr/local/man:$MANPATH"
+export PYTHONPATH="/usr/local/lib/python2.7/site-packages/"
+# export PYTHONPATH="/usr/local/python/bin:"$PYTHONPATH
 
 source $ZSH/oh-my-zsh.sh
 
@@ -177,6 +179,8 @@ alias mv='mv -i'
  
 alias mkdir='mkdir -p'
 alias emacs='/usr/local/bin/emacs-24.4'
+alias python='/usr/local/bin/python2.7'
+alias tmux='/usr/local/bin/tmux'
  
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
