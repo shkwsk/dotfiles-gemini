@@ -7,7 +7,7 @@
 [color]
 	ui = auto
 [alias]
-	lg = log --graph --abbrev-commit --date=local --branches --pretty=format:'%C(yellow)%h%Creset -%C(bold blue)%d%Creset %C(red)(%cd)%Creset \n%s\n'
+	lg = log --graph --date=local --pretty=format:'%C(yellow)%h%Creset -%C(bold blue)%d%Creset %C(red)(%cd)%Creset \n%s\n'
 	st = status
 	cm = commit
 	co = checkout
