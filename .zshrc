@@ -181,7 +181,8 @@ alias mkdir='mkdir -p'
 alias emacs='/usr/local/bin/emacs-24.4'
 alias python='/usr/local/bin/python2.7'
 alias tmux='/usr/local/bin/tmux'
- 
+alias pip='/usr/local/bin/pip'
+
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
  

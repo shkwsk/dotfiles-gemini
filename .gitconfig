@@ -1,5 +1,6 @@
 [user]
 	name = shkwsk
+	email = shkwsk@icloud.com
 [core]
 	editor = emacs
 	excludesfile = ~/.gitignore_global
