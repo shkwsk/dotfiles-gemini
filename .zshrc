@@ -47,7 +47,10 @@ ZSH_THEME="lukerandall"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-# User configuration
+### User configuration
+
+# なるべく.bashrcの設定を反映
+source ~/.bashrc
 
 export PATH="/usr/local/Cellar/coreutils/8.23_1/libexec/gnubin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/texbin"
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -103,7 +106,16 @@ bindkey -e
 HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
- 
+
+# shell 色設定
+source ~/dotfiles/git-prompt.sh
+fpath=(~/dotfiles $fpath)
+GIT_PS1_SHOWUNTRACKEDFILES=true
+GIT_PS1_SHOWSTASHSTATE=true
+GIT_PS1_SHOWDIRTYSTATE=true
+setopt PROMPT_SUBST
+PROMPT='%B%F{green}%n@%m%f%b %B%F{blue}%2~%f%b%F{yellow}$(__git_ps1 " (%s)")%f \$ '
+
 ########################################
 # 補完
 # 補完機能を有効にする
@@ -122,7 +134,6 @@ zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
  
 # ps コマンドのプロセス名補完
 zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
-
 
 ########################################
 # オプション
@@ -143,6 +154,7 @@ setopt auto_cd
  
 # cd したら自動的にpushdする
 setopt auto_pushd
+
 # 重複したディレクトリを追加しない
 setopt pushd_ignore_dups
  
@@ -160,7 +172,9 @@ setopt hist_reduce_blanks
  
 # 高機能なワイルドカード展開を使用する
 setopt extended_glob
- 
+
+# ^D でログアウトさせない
+setopt IGNOREEOF
 ########################################
 # キーバインド
  
@@ -181,7 +195,6 @@ alias mkdir='mkdir -p'
 alias emacs='/usr/local/bin/emacs-24.4'
 alias python='/usr/local/bin/python2.7'
 alias tmux='/usr/local/bin/tmux'
-alias pip='/usr/local/bin/pip'
 
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
@@ -207,12 +220,12 @@ fi
  
 ########################################
 # OS 別のls設定
+export CLICOLOR=1
+export LSCOLORS=DxGxcxdxCxegedabagacad
+eval "`dircolors -b ~/.dir_colors`"
 case ${OSTYPE} in
     darwin*)
         #Mac用の設定
-	export CLICOLOR=1
-	export LSCOLORS=DxGxcxdxCxegedabagacad
-	eval "`dircolors -b ~/.dir_colors`"
 	alias ls='gls --color'
         ;;
     linux*)
