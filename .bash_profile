@@ -1,6 +1,3 @@
 #/bin/sh
-
-# Get the aliases and functions
-if [ -f ~/.bashrc ]; then
-    . ~/.bashrc
-fi
+# /bin/zshがあれば起動する
+if ( -f /bin/zsh ) exec /bin/zsh -l
