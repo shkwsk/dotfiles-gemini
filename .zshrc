@@ -1,7 +1,7 @@
 # なるべく.bashrcの設定を反映
 source ~/.bashrc
 
-export PATH="/usr/local/Cellar/coreutils/8.23_1/libexec/gnubin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/texbin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/texbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 export PYTHONPATH="/usr/local/lib/python2.7/site-packages/"
 # export PYTHONPATH="/usr/local/python/bin:"$PYTHONPATH
@@ -10,10 +10,6 @@ export PYTHONPATH="/usr/local/lib/python2.7/site-packages/"
 # export LANG=en_US.UTF-8
 
 ##################################################
-# coreutilsパス追加
-coreutils=/usr/local/Cellar/coreutils/8.23_1
-export PATH=$coreutils/libexec/gnubin:$PATH
-
 # control + d でログアウト禁止
 export IGNOREEOF=10
 
