@@ -35,7 +35,8 @@ GIT_PS1_SHOWUNTRACKEDFILES=true
 GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWDIRTYSTATE=true
 setopt PROMPT_SUBST
-PROMPT='%B%F{green}%n@%m%f%b %B%F{blue}%~%f%b%F{yellow}$(__git_ps1 " (%s)")%f
+PROMPT='
+%B%F{green}%n@%m%f%b %F{white}[%D %*] %B%F{blue}%~%f%b%F{yellow}$(__git_ps1 " (%s)")%f
 \$ '
 
 ########################################
